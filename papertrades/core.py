@@ -16,7 +16,7 @@ class Portfolio:
         self.trades = pandas.read_csv(self.filepath)
         self.trades = self.trades.set_index('order_time')
 
-    def trade(self, *, symbol: str, order_type: bool, quantity: int, price: float, order_time: int = None):
+    def trade(self, symbol: str, order_type: bool, quantity: int, price: float, order_time: int = None):
         if order_time is None:
             order_time = time.time()
 
