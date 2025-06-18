@@ -51,11 +51,11 @@ class Portfolio:
 
         return balance
 
-    def get_value_over_time(self):
+    def get_equity_over_time(self):
         balance = self.starting_balance
         positions = {}
         prices = {}
-        values = [balance]
+        equities = [balance]
 
         for _, trade in self.trades.iterrows():
             symbol = trade['symbol']
@@ -67,17 +67,17 @@ class Portfolio:
             positions[symbol] = positions.get(symbol, 0) + (qty if trade['order_type'] else -qty)
             prices[symbol] = trade['price']
 
-            total_value = balance
+            total_equity = balance
             for symbol, qty in positions.items():
                 if qty != 0:
                     last_price = prices.get(symbol, 0.0)
-                    total_value += qty * last_price
+                    total_equity += qty * last_price
 
-            values.append(total_value)
+            equities.append(total_equity)
 
-        return values
+        return equities
 
-    def get_value(self):
+    def get_equity(self):
         balance = self.starting_balance
         positions = {}
         prices = {}
@@ -92,13 +92,13 @@ class Portfolio:
             positions[symbol] = positions.get(symbol, 0) + (qty if trade['order_type'] else -qty)
             prices[symbol] = trade['price']
 
-        total_value = balance
+        total_equity = balance
         for symbol, qty in positions.items():
             if qty != 0:
                 last_price = prices.get(symbol, 0.0)
-                total_value += qty * last_price
+                total_equity += qty * last_price
 
-        return total_value
+        return total_equity
 
     def get_all_assets(self):
         positions = {}
@@ -126,21 +126,21 @@ class Portfolio:
 
         return asset_values
 
-    def get_total_asset_values(self):
+    def get_total_asset_equity(self):
         asset_values = self.get_asset_values()
         return sum(list(asset_values.values()))
 
-    def plot_value_over_time(self):
-        values = self.get_value_over_time()
+    def plot_equity_over_time(self):
+        equity = self.get_equity_over_time()
         index = pandas.to_datetime(self.trades.index, unit = 's')
         adj_index = [index[0]] + list(index) # because of the starting balance
 
-        plot.plot(adj_index, values)
+        plot.plot(adj_index, equity)
 
     def plot_growth_over_time(self):
-        values = self.get_value_over_time()
-        values = [(value / values[0]) - 1 for value in values]
+        equity = self.get_equity_over_time()
+        equity = [(e / equity[0]) - 1 for e in equity]
         index = pandas.to_datetime(self.trades.index, unit = 's')
         adj_index = [index[0]] + list(index) # because of the starting balance
 
-        plot.plot(adj_index, values)
+        plot.plot(adj_index, equity)
