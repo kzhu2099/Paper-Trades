@@ -2,8 +2,6 @@ import pandas
 import matplotlib.pyplot as plot
 import time
 
-plot.style.use('seaborn-v0_8')
-
 class Portfolio:
     def __init__(self, starting_balance, filepath):
         self.filepath = filepath
