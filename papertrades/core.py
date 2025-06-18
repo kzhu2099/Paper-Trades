@@ -77,7 +77,7 @@ class Portfolio:
 
         return equities
 
-    def get_equity(self):
+    def get_equity(self, custom_prices = {}):
         balance = self.starting_balance
         positions = {}
         prices = {}
@@ -95,7 +95,7 @@ class Portfolio:
         total_equity = balance
         for symbol, qty in positions.items():
             if qty != 0:
-                last_price = prices.get(symbol, 0.0)
+                last_price = custom_prices.get(symbol, prices.get(symbol, 0.0))
                 total_equity += qty * last_price
 
         return total_equity
@@ -114,14 +114,14 @@ class Portfolio:
     def get_latest_asset_prices(self):
         return self.trades.groupby('symbol')['price'].last().to_dict()
 
-    def get_asset_values(self):
+    def get_asset_values(self, custom_prices = {}):
         positions = self.get_all_assets()
         latest_prices = self.get_latest_asset_prices()
 
         asset_values = {}
         for symbol, qty in positions.items():
             if qty != 0:
-                price = latest_prices.get(symbol, 0.0)
+                price = custom_prices.get(symbol, latest_prices.get(symbol, 0.0))
                 asset_values[symbol] = qty * price
 
         return asset_values
