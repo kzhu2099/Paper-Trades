@@ -5,7 +5,7 @@ build-backend = 'setuptools.build_meta'
 [project]
 name = 'papertrades'
 
-version = '1.0.6'
+version = '1.0.8'
 
 description = 'a package to simulate and analyze paper trades in Python'
 
@@ -13,7 +13,7 @@ authors = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]
 maintainers = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]
 
 classifiers = [
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Stable/Production',
 
     'Intended Audience :: End Users/Desktop',
 

@@ -7,7 +7,7 @@ Many tools exist online for simulation paper trading. However, users may not fin
 - HomePage: https://github.com/kzhu2099/Paper-Trades
 - Issues: https://github.com/kzhu2099/Paper-Trades/issues
 
-[![PyPI Downloads](https://static.pepy.tech/badge/papertrades)](https://pepy.tech/projects/papertrades)
+[![PyPI Downloads](https://static.pepy.tech/badge/papertrades)](https://pepy.tech/projects/papertrades) ![PyPI version](https://img.shields.io/pypi/v/papertrades.svg)
 
 Author: Kevin Zhu
 
