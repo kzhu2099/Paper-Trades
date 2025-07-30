@@ -5,9 +5,9 @@ build-backend = 'setuptools.build_meta'
 [project]
 name = 'papertrades'
 
-version = '1.0.4'
+version = '1.0.5'
 
-description = 'a tool to simulate and analyze paper trades in Python'
+description = 'a package to simulate and analyze paper trades in Python'
 
 authors = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]
 maintainers = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]

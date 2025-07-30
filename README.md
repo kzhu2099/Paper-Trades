@@ -1,6 +1,6 @@
 # papertrades
 
-papertrades is a tool to simulate and analyze paper trades in Python
+papertrades is a package to simulate and analyze paper trades in Python.
 
 - HomePage: https://github.com/kzhu2099/Paper-Trades
 - Issues: https://github.com/kzhu2099/Paper-Trades/issues
