@@ -1,6 +1,8 @@
 # papertrades
 
-papertrades is a package to simulate and analyze paper trades in Python.
+`papertrades` is a package to simulate and analyze paper trades in Python.
+
+Many tools exist online for simulation paper trading. However, users may not find them to be up to their standards. `papertrades` changes this by allowing full customization.
 
 - HomePage: https://github.com/kzhu2099/Paper-Trades
 - Issues: https://github.com/kzhu2099/Paper-Trades/issues
@@ -9,7 +11,7 @@ papertrades is a package to simulate and analyze paper trades in Python.
 
 Author: Kevin Zhu
 
-THIS IS NOT FINANCIAL ADVICE; papertrades IS A TOOL TO SIMULATE THE MARKET FOR EDUCATIONAL PURPOSES.
+THIS IS NOT FINANCIAL ADVICE; `papertrades` IS A TOOL TO SIMULATE THE MARKET FOR EDUCATIONAL PURPOSES.
 
 ## Features
 
@@ -21,7 +23,7 @@ THIS IS NOT FINANCIAL ADVICE; papertrades IS A TOOL TO SIMULATE THE MARKET FOR E
 
 ## Installation
 
-To install papertrades, use pip: ```pip install papertrades```.
+To install `papertrades`, use pip: ```pip install papertrades```.
 
 However, many prefer to use a virtual environment (or any of their preferred choice).
 
